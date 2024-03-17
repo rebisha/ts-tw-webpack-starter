@@ -1,0 +1,1 @@
+# TypeScript, Tailwind and Webpack starter project
