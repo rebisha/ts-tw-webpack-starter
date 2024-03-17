@@ -28,12 +28,12 @@ module.exports = {
         use: ["style-loader", "css-loader", "postcss-loader"],
       },
       {
-        test: /\.js$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: "babel-loader",
       },
       {
-        test: /\.(ts|tsx)?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: "ts-loader",
       },
