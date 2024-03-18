@@ -1,7 +1,10 @@
-import React from "react"
+import React from "react";
+import SignUp from "../SignUp/SignUp";
 
 const App = () => (
-    <h1 className="text-4xl text-amber-400 font-display">Typescript, Tailwind and Webpack starter</h1>
-)
+  <>
+    <SignUp />
+  </>
+);
 
-export default App
+export default App;
