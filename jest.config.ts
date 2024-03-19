@@ -6,6 +6,27 @@
 import type {Config} from 'jest';
 
 const config: Config = {
+  // A preset that is used as a base for Jest's configuration
+  preset: "ts-jest",
+
+  // The test environment that will be used for testing
+  testEnvironment: "jsdom",
+
+  // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
+  testPathIgnorePatterns: ["node_modules"],
+
+  // An array of glob patterns indicating a set of files for which coverage information should be collected
+  collectCoverageFrom: ["src/components/**/*.{tsx}"],
+
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    "ts-jest": {
+      babelConfig: true,
+      diagnostics: false,
+      isolatedModules: true,
+    },
+  },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -19,13 +40,10 @@ const config: Config = {
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
-
-  // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  // collectCoverage: true,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
+  // coverageDirectory: "coverage",
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -66,9 +84,6 @@ const config: Config = {
   // A path to a module which exports an async function that is triggered once after all test suites
   // globalTeardown: undefined,
 
-  // A set of global variables that need to be available in all test environments
-  // globals: {},
-
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
 
@@ -100,9 +115,6 @@ const config: Config = {
 
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
-
-  // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -145,9 +157,6 @@ const config: Config = {
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
-  // The test environment that will be used for testing
-  testEnvironment: "jsdom",
-
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
 
@@ -158,11 +167,6 @@ const config: Config = {
   // testMatch: [
   //   "**/__tests__/**/*.[jt]s?(x)",
   //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
-
-  // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "\\\\node_modules\\\\"
   // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
