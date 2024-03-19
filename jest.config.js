@@ -1,11 +1,4 @@
-/**
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
-import type {Config} from 'jest';
-
-const config: Config = {
+module.exports = {
   // A preset that is used as a base for Jest's configuration
   preset: "ts-jest",
 
@@ -18,14 +11,13 @@ const config: Config = {
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   collectCoverageFrom: ["src/components/**/*.{tsx}"],
 
+  transform: {
+    "^.+\\.m?[jt]s?x?$": "babel-jest",
+    "^.+\\.svg$": "jest-svg-transformer",
+  }
+
   // A set of global variables that need to be available in all test environments
-  globals: {
-    "ts-jest": {
-      babelConfig: true,
-      diagnostics: false,
-      isolatedModules: true,
-    },
-  },
+  // globals: {},
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -199,5 +191,3 @@ const config: Config = {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
-
-export default config;
