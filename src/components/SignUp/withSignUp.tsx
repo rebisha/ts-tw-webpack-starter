@@ -1,4 +1,4 @@
-import React, { FC, FormEvent, useState } from "react";
+import React, { Dispatch, FC, FormEvent, SetStateAction, useState } from "react";
 import { z } from "zod"
 
 type SignUpInputProps = {
@@ -11,6 +11,7 @@ type SignUpOutputProps = SignUpInputProps & {
   handleChange: ({ target: { value } }) => void;
   handleSubmit: (e: FormEvent<HTMLButtonElement>) => void
   success: boolean
+  setSuccess: Dispatch<SetStateAction<boolean>>
   updates: string[];
 };
 
@@ -42,6 +43,7 @@ export const withSignUp =
           })
         } else {
           setError(undefined);
+          setSuccess(true)
         }
       }
 
@@ -51,5 +53,5 @@ export const withSignUp =
       
       Component.displayName = name;
 
-      return <Component email={email} error={error} handleChange={handleChange} handleSubmit={handleSubmit} success={success} updates={updates} />;
+      return <Component email={email} error={error} handleChange={handleChange} handleSubmit={handleSubmit} success={success} setSuccess={setSuccess} updates={updates} />;
   };
