@@ -1,20 +1,14 @@
 import React from "react";
+import { withSignUp } from "./withSignUp";
 import checkIcon from "../../static/assets/check.svg";
 import desktopImage from "../../static/assets/signup-desktop.svg";
 
-const SignUp = () => {
-  const updates = [
-    "Product discovery and building what matters",
-    "Measuring to ensure updates are a success",
-    "And much more!",
-  ];
-
+const SignUp = withSignUp(({ email, error, handleChange, handleSubmit, success, updates }) => {
   return (
     <div className="flex justify-between">
       <div className="p-12">
         <h1 className="font-display text-5xl font-bold mb-6">Stay updated!</h1>
         <p className="mb-5">
-          {" "}
           Join 60,000+ product managers receiving monthly updates on:
         </p>
 
@@ -34,13 +28,17 @@ const SignUp = () => {
         <div className="flex flex-col">
           <label className="font-bold mb-1">Email address</label>
           <input
+            name="email"
             className="border-slate-300 rounded border h-10 mb-3 p-4"
-            type="text"
+            type="email"
             placeholder="email@company.com"
+            onChange={handleChange}
+            value={email}
           />
+          {error !== undefined ? <p className="font-body text-orange-600 mb-3">{error}</p> : null}
           <button
             className="border rounded bg-black text-white h-12"
-            type="submit"
+            onClick={handleSubmit}
           >
             Subscribe to monthly newsletter
           </button>
@@ -50,6 +48,6 @@ const SignUp = () => {
       <img src={desktopImage} alt="desktop-illustration" />
     </div>
   );
-};
+})
 
 export default SignUp;
