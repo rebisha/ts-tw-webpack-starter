@@ -13,8 +13,9 @@ module.exports = {
 
   transform: {
     "^.+\\.m?[jt]s?x?$": "babel-jest",
-    "^.+\\.svg$": "jest-svg-transformer",
-  }
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/fileTransformer.js",
+  },
 
   // A set of global variables that need to be available in all test environments
   // globals: {},
