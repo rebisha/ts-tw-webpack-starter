@@ -7,7 +7,7 @@
     "dev": "webpack serve",
     "build": "webpack",
     "start": "webpack serve --open",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "@babel/core": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
     "@babel/preset-react": "^7.13.13",
+    "@babel/preset-typescript": "^7.24.1",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/jest": "^29.5.12",
@@ -59,9 +60,6 @@
     "zod": "^3.22.4"
   },
   "dependencies": {
-    "-": "^0.0.1",
-    "@babel/preset-typescript": "^7.24.1",
-    "D": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
