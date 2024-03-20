@@ -1,10 +1,11 @@
-import { Dispatch, SetStateAction } from "react"
-import iconSuccess from "../../static/assets/success.svg"
+import React from "react";
+import { Dispatch, SetStateAction } from "react";
+import iconSuccess from "../../static/assets/success.svg";
 
 type SignUpSuccessProps = {
-  email: string
-  setSuccess: Dispatch<SetStateAction<boolean>>
-}
+  email: string;
+  setSuccess: Dispatch<SetStateAction<boolean>>;
+};
 
 const SignUpSuccess = ({ email, setSuccess }: SignUpSuccessProps) => {
   return (
@@ -29,4 +30,4 @@ const SignUpSuccess = ({ email, setSuccess }: SignUpSuccessProps) => {
   );
 };
 
-export default SignUpSuccess
+export default SignUpSuccess;
