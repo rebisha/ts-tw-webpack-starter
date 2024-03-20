@@ -48,6 +48,7 @@ const SignUp = withSignUp(
               <div className="flex flex-col">
                 <label className="font-bold mb-1">Email address</label>
                 <input
+                  data-testid="email-input"
                   name="email"
                   className="border-slate-300 rounded border h-10 mb-3 p-4"
                   type="email"
