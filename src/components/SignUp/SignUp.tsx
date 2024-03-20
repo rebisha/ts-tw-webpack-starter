@@ -1,4 +1,3 @@
-import React from "react";
 import { withSignUp } from "./withSignUp";
 import SignUpSuccess from "./SignUpSuccess";
 import checkIcon from "../../static/assets/check.svg";
