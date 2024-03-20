@@ -9,7 +9,7 @@ module.exports = {
   testPathIgnorePatterns: ["node_modules"],
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ["src/components/**/*.{tsx}"],
+  collectCoverageFrom: ["src/components/**/*.{ts,tsx}"],
 
   transform: {
     "^.+\\.m?[jt]s?x?$": "babel-jest",
